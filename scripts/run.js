@@ -1,26 +1,30 @@
-const { ethers } = require("ethers");
-const hre=require("hardhat");
+const { ethers } = require("hardhat");
 
 const main = async() =>{
-    const nftContractFactory=await hre.ethers.getContractFactory("MyepicNFT");
-    const nftContract = await nftContractFactory.deploy();
-    await nftContract.deployed();
-    console.log("Contract Address :",nftContract.address);
-    let makeAnEpicNFT_tranasaction= await nftContract.makeAnEpicNFT();
-    await makeAnEpicNFT_tranasaction.wait();
+   const nftContract  = await ethers.getContractFactory("MyEpicNFT");
+   const deployContract  = await nftContract.deploy();
+   await deployContract.deployed();
+   console.log("Contract Address :",deployContract.address);
 
-    makeAnEpicNFT_tranasaction=await nftContract.makeAnEpicNFT();
+   let txn_makeEpicNFT = await deployContract.makeEpicNFT();
 
-    await makeAnEpicNFT_tranasaction.wait();
+   await txn_makeEpicNFT.wait();
+
+    txn_makeEpicNFT = await deployContract.makeEpicNFT();
+
+   await txn_makeEpicNFT.wait();
+
+
 }
 
 const runMain = async() =>{
-    try {
-        await main();
-        process.exit(0);
-    } catch(error){
-        console.log(error);
-        process.exit(1);
-    }
+   try{
+    await main();
+    process.exit(0);
+   } catch(error){
+    console.log(error)
+    process.exit(1);
+   }
 };
- runMain();
+
+runMain();

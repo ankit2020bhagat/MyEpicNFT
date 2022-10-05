@@ -3,17 +3,16 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config({ path: "env" });
 /** @type import('hardhat/config').HardhatUserConfig */
-const { ALCHEMY_API_KEY, PRIVATE_KEY } = process.env;
+const { QUICKNODE_API_KEY_URL, GOERLI_PRIVATE_KEY } = process.env;
 module.exports = {
   solidity: "0.8.9",
   paths: {
     artifacts: './src/artifacts',
   },
   networks: {
-    rinkeby: {
-      url: "https://eth-rinkeby.alchemyapi.io/v2/cv6DlK1tKoqoNNpbJzilbxdoK5FUPKgn",
-      accounts: ['683178485355730281da2bb23d1ba833c1ca089171340164a838f931e9041b46'],
-      
+    goerli: {
+      url: "https://eth-goerli.g.alchemy.com/v2/GFg7TsPqZV0ZaIxRgWrGRJDEaEvkvyA0",
+      accounts: ["093da99a97487abdf1a45677fd60b8fe156fc3d4bf0e64a2648d032e60c57fc3"]
     },
   },
 };
