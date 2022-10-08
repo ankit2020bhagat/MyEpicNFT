@@ -13,7 +13,7 @@ const TWITTER_HANDLER = '_buildspace';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLER}`;
 
 const TOTAL_MINT_COUNT = 50;
-const contractAddress = "0x27B307F52Cc487280A22e5B0b631b835311F6972";
+const contractAddress = "0x1eB775109FB9fEE7bC9e003371FCCF4b9B42b082";
 let OPENSEA_LINK = '';
 
 function App() {
@@ -144,7 +144,7 @@ function App() {
             e.preventDefault();
             window.location.href = OPENSEA_LINK;
           }}
-        > Click here</button>
+        > Find your nft here</button>
         <p className="sub-text">
           Wallet Address: {account}
         </p>
