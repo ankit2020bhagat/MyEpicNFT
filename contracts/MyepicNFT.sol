@@ -110,6 +110,7 @@ contract MyEpicNFT is ERC721URIStorage {
         string memory finalSvg = string(
             abi.encodePacked(baseSvg, combinedWord, "</text></svg>")
         );
+        console.log("final SVG ",finalSvg);
         string memory json = Base64.encode(
             bytes(
                 string(
@@ -136,7 +137,8 @@ contract MyEpicNFT is ERC721URIStorage {
 
         _safeMint(msg.sender, newItemId);
 
-        _setTokenURI(newItemId, finalTokenUri);
+       _setTokenURI(newItemId, "https://ipfs.io/ipfs/QmTqFZVEiqe2TGNF1RThwqV3b4xWkwm7s2Ak1iJWj6uGgw?filename=svgviewer-output.svg");
+
 
         _tokenIds.increment();
 
